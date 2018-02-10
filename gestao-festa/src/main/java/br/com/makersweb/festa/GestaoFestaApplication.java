@@ -1,4 +1,4 @@
-package br.com.makersweb.gestaofesta;
+package br.com.makersweb.festa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
