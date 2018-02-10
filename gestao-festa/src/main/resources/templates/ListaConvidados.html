@@ -12,7 +12,37 @@
 </head>
 <body>
 
-    <h1>Bem vindo</h1>
+    <div class="panel panel-default" style="margin: 10px;">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de Convidados</h1>
+        </div>
+
+        <div class="panel-body">
+
+            <form class="form-line" method="post" style="margin: 20px 0;" th:object="${convidado}">
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome" />
+                    <input type="text" class="form-control" th:field="*{quantidadeAcompanhantes}" placeholder="Acompanhantes" />
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+            </form>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Acompanhantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="convidado : ${convidados}">
+                        <td th:text="${convidado.nome}"></td>
+                        <td th:text="${convidado.quantidadeAcompanhantes}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
